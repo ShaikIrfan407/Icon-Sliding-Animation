@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Sliding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid white;
+            border-radius: 20px;
+            display: flex;
+            z-index: 1;
+            transition: all 2.5s ease;
+        }
+
+        .icon {
+            width: 150px;
+            height: 150px;
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+        #icon-1 {
+            background-color: salmon;
+            position: absolute;
+            z-index: 5;
+            transition: all 1s ease;
+        }
+        #icon-2 {
+            opacity: 0;
+            background-color: yellow;
+            position: absolute;
+            z-index: 4;
+            transition: all 1.5s ease;
+        }
+        #icon-3 {
+            opacity: 0;
+            background-color: red;
+            position: absolute;
+            z-index: 3;
+            transition: all 2s ease;
+        }
+        #icon-4 {
+            opacity: 0;
+            background-color: indigo;
+            position: absolute;
+            z-index: 2;
+            transition: all 2.5s ease;
+        }
+        .box:hover {
+            width: 720px;
+        }
+        .box:hover #icon-2 {
+            opacity: 1;
+            transform: translateX(115%);
+        }
+        .box:hover #icon-3 {
+            opacity: 1;
+            transform: translateX(230%);
+        }
+        .box:hover #icon-4 {
+            opacity: 1;
+            transform: translateX(345%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="icon" id="icon-1"></div>
+            <div class="icon" id="icon-2"></div>
+            <div class="icon" id="icon-3"></div>
+            <div class="icon" id="icon-4"></div>
+        </div>
+    </div>
+</body>
+</html>
